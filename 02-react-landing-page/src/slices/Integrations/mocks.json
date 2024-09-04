@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Locate"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non irure ea veniam excepteur commodo excepteur veniam cillum voluptate consectetur. Nisi culpa est amet laborum anim tempor id aliquip est enim aute aliqua."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

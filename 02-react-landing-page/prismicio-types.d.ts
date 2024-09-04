@@ -103,6 +103,8 @@ export type CaseStudyDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | CallToActionSlice
+  | IntegrationsSlice
   | CaseStudiesSlice
   | ShowcaseSlice
   | BentoSlice
@@ -394,6 +396,81 @@ type BentoSliceVariation = BentoSliceDefault;
 export type BentoSlice = prismic.SharedSlice<"bento", BentoSliceVariation>;
 
 /**
+ * Primary content in *CallToAction → Default → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Logo field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Button Link field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Button Lable field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.button_lable
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_lable: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault;
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
+>;
+
+/**
  * Item in *CaseStudies → Default → Primary → Study*
  */
 export interface CaseStudiesSliceDefaultPrimaryStudyItem {
@@ -554,6 +631,61 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Primary content in *Integrations → Default → Primary*
+ */
+export interface IntegrationsSliceDefaultPrimary {
+  /**
+   * Title field in *Integrations → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Body field in *Integrations → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Integrations Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntegrationsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IntegrationsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Integrations*
+ */
+type IntegrationsSliceVariation = IntegrationsSliceDefault;
+
+/**
+ * Integrations Shared Slice
+ *
+ * - **API ID**: `integrations`
+ * - **Description**: Integrations
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntegrationsSlice = prismic.SharedSlice<
+  "integrations",
+  IntegrationsSliceVariation
+>;
 
 /**
  * Primary content in *RichText → Default → Primary*
@@ -818,6 +950,10 @@ declare module "@prismicio/client" {
       BentoSliceDefaultPrimary,
       BentoSliceVariation,
       BentoSliceDefault,
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
       CaseStudiesSlice,
       CaseStudiesSliceDefaultPrimaryStudyItem,
       CaseStudiesSliceDefaultPrimary,
@@ -827,6 +963,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      IntegrationsSlice,
+      IntegrationsSliceDefaultPrimary,
+      IntegrationsSliceVariation,
+      IntegrationsSliceDefault,
       RichTextSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
