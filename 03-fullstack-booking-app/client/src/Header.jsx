@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="p-4 flex items-center justify-between ">
-      <a href="/" className="flex items-center gap-1">
+    <header className="flex items-center justify-between mb-10">
+      <a href="/" className="flex items-center gap-1 p-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -18,22 +18,22 @@ export default function Header() {
             d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
           />
         </svg>
-        <span className="font-bold texl-xl">logo</span>
+        <span className="texl-xl font-bold">logo</span>
       </a>
-      <div className="flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300">
+      <div className="flex items-center gap-4 rounded-full border border-gray-300 p-4 shadow-md shadow-gray-200">
         <div>Anywhere</div>
-        <div className="border-l border-gray-300"></div>
+        <div className="h-[20px] border-l border-gray-300"></div>
         <div>Any week</div>
-        <div className="border-l border-gray-300"></div>
+        <div className="h-[20px] border-l border-gray-300"></div>
         <div>Add guests</div>
-        <button className="bg-primary text-white p-1 rounded-full">
+        <button className="rounded-full bg-primary p-2 text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-4 h-4"
+            className="h-4 w-4"
           >
             <path
               strokeLinecap="round"
@@ -45,7 +45,7 @@ export default function Header() {
       </div>
       <Link
         to={"/login"}
-        className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4 "
+        className="flex items-center gap-2 rounded-full border border-gray-300 p-4"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ export default function Header() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="h-6 w-6"
         >
           <path
             strokeLinecap="round"
@@ -61,12 +61,12 @@ export default function Header() {
             d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
           />
         </svg>
-        <div className="bg-gray-500 text-white rounded-full border border-gray-500 overflow-hidden">
+        <div className="overflow-hidden rounded-full border border-gray-500 bg-gray-500 text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="w-6 h-6 relative top-1"
+            className="relative top-1 h-6 w-6"
           >
             <path
               fillRule="evenodd"
