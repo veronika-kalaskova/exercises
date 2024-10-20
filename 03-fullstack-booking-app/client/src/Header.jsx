@@ -6,7 +6,7 @@ export default function Header() {
   const { user } = useContext(UserContext);
 
   return (
-    <header className="mb-10 flex items-center justify-between">
+    <header className="mb-10 flex justify-between items-center relative">
       <Link to={"/"} href="/" className="flex items-center gap-1 p-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@ export default function Header() {
         </svg>
         <span className="texl-xl font-bold">logo</span>
       </Link>
-      <div className="flex items-center gap-4 rounded-full border border-gray-300 p-4 shadow-md shadow-gray-200">
+      <div className="flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 justify-center items-center gap-4 rounded-full border border-gray-300 p-4 shadow-md shadow-gray-200">
         <div>Anywhere</div>
         <div className="h-[20px] border-l border-gray-300"></div>
         <div>Any week</div>
